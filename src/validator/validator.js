@@ -340,7 +340,7 @@
 				return self;
 			},
 			
-			/* @param e - for internal use only */
+			/** @param e - for internal use only */
 			invalidate: function(errs, e) {
 				
 				// errors are given manually: { fieldName1: 'message1', fieldName2: 'message2' }
@@ -394,7 +394,7 @@
 			
 //{{{  checkValidity() - flesh and bone of this tool
 						
-			/* @returns boolean */
+			/** @returns boolean */
 			checkValidity: function(els, e) {
 				
 				els = els || inputs;    
