@@ -1,11 +1,15 @@
+#!/bin/bash
+
+VERSION="1.2.7-wepanlen"
+
 cd build
 mkdir production
 mkdir development
-mv 1.2.5/*.min.js production
-mv 1.2.5/*/*.min.js production
-mv 1.2.5/*.js development
-mv 1.2.5/*/*.js development
-rm -R 1.2.5
+mv $VERSION/*.min.js production
+mv $VERSION/*/*.min.js production
+mv $VERSION/*.js development
+mv $VERSION/*/*.js development
+rm -R $VERSION
 
 ## Build the Developer script
 touch jquery.tools-wepanlen.js
