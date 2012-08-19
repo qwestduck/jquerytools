@@ -41,8 +41,8 @@
 		<replaceregexp match="@VERSION" replace="${version}" byline="true" file="${file1}" /> 
 
 		<!-- last modified (via <git log> command) -->
-		<propertyregex property="source" input="${file1}" override="yes" replace="\1" 
-			regexp=".+/\d.\d.\d/(.*)\.js"/>  
+		<propertyregex property="source" input="${file1}" override="yes" replace="\2" 
+			regexp=".+\/\d+\.\d+\.\d+(-\w+)?\/(.*)\.js"/>  
 
 		<exec executable="git" outputproperty="git.log" >  
 			<arg line="log -1 src/${source}.js"/>  
