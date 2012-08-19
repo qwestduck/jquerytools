@@ -1,5 +1,7 @@
 <project name="jQuery.Tools" default="min">
     <taskdef resource="net/sf/antcontrib/antcontrib.properties" />
+    <taskdef name="jslint" classname="com.googlecode.jslint4java.ant.JSLintTask" classpath="lib/jslint4java-2.0.2.jar" />
+
     <property name="version" value="1.2.7-wepanlen" />
     <property name="build" value="build/${version}" />
     <property name="file" value="none" />
@@ -76,23 +78,16 @@
         <if>
             <equals arg1="${file}" arg2="none" />
         <then> <!-- loop through all files -->
-            <for param="file">
-                <path>
-                    <fileset dir="src" includes="*/*.js" />
-                </path>
-                <sequential>
-                    <java jar="lib/rhino.jar" fork="true">
-                        <arg path="lib/jslint.js" />
-                        <arg path="@{file}" />
-                    </java>
-                </sequential>
-            </for>
+            <jslint>
+                <formatter type="plain" />
+                <fileset dir="src" includes="**/*.js" />
+            </jslint>
         </then>
         <else> <!-- ant lint -Dfile=validator/validator.js -->
-            <java jar="lib/rhino.jar" fork="true">
-                <arg path="lib/jslint.js" />
-                <arg path="src/${file}" />
-            </java>
+            <jslint>
+                <formatter type="plain" />
+                <fileset dir="src" includes="${file}" />
+            </jslint>
         </else>
         </if>
     </target>
