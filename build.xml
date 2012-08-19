@@ -27,29 +27,33 @@
 				<fileset dir="${build}" includes="*/*.js" excludes="*/*.min.js"/>
 			</path>
 		
-		  <sequential>
-		  
-		  		<!-- version number -->                             
-				<replaceregexp match="@VERSION" replace="${version}" byline="true" file="@{file}" /> 
-			
-				<!-- last modified (via <git log> command) -->
-				<propertyregex property="source" input="@{file}" override="yes" replace="\1" 
- 					regexp=".+/\d.\d.\d/(.*)\.js"/>  
- 				
-				<exec executable="git" outputproperty="git.log" >  
-					<arg line="log -1 src/${source}.js"/>  
-				</exec> 			
-				
-				<propertyregex property="date" input="${git.log}" select="\1">  
-					<regexp pattern="Date:(.+)"/>  
-				</propertyregex>  
-				
-				<replaceregexp match="@DATE" replace="${date}" file="@{file}" /> 
-				
-		  </sequential>
+			<sequential>
+				<antcall target="search">
+					<param name="file1" value="@{file}"/>				
+				</antcall>
+			</sequential>
 		</for>
 	</target>
-	
+
+	<target name="search">
+		<echo>Checking revision history of ${file1}</echo>
+		<!-- version number -->                             
+		<replaceregexp match="@VERSION" replace="${version}" byline="true" file="${file1}" /> 
+
+		<!-- last modified (via <git log> command) -->
+		<propertyregex property="source" input="${file1}" override="yes" replace="\1" 
+			regexp=".+/\d.\d.\d/(.*)\.js"/>  
+
+		<exec executable="git" outputproperty="git.log" >  
+			<arg line="log -1 src/${source}.js"/>  
+		</exec> 			
+
+		<propertyregex property="date" input="${git.log}" select="\1">  
+			<regexp pattern="Date:(.+)"/>  
+		</propertyregex>  
+
+		<replaceregexp match="@DATE" replace="${date}" file="${file1}" /> 
+	</target>	
 	
 	<!-- minify with Closure Compiler (default mode) --> 
 	<target name="min" depends="sources">                                                   
