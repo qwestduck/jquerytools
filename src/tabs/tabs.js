@@ -108,7 +108,10 @@
             currentPane = this.getCurrentPane();
 
         // store original width of a pane into memory
-        w || (w = this.getPanes().eq(0).width());
+        if (!w) {
+            w = this.getPanes().eq(0).width();
+        }
+
         animating = true;
 
         nextPane.show(); // hidden by default
@@ -190,7 +193,11 @@
                 }
 
                 // if firstRender, only run effect if initialEffect is set, otherwise default
-                effect = firstRender ? conf.initialEffect && conf.effect || 'default' : conf.effect;
+                if (firstRender && !conf.initialEffect) {
+                    effect = 'default';
+                } else {
+                    effect = conf.effect;
+                }
 
                 // call the effect
                 effects[effect].call(self, i, function () {
