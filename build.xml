@@ -91,4 +91,19 @@
         </else>
         </if>
     </target>
+
+    <target name="html5">
+        <apply executable="java" parallel="false" verbose="true" failonerror="true">
+            <fileset dir="test">
+                <include name="**/*.html" />
+                <include name="**/*.htm" />
+            </fileset>
+            <arg value="-jar" />
+            <arg path="lib/HTMLValidator.jar" />
+            <arg value="http://validator.w3.org/nu" />
+            <!--<arg value="- -w3c" />-->
+            <srcfile/>
+        </apply>
+        <echo>HTML validator successful</echo>
+    </target>
 </project>
