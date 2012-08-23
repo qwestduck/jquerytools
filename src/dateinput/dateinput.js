@@ -10,7 +10,7 @@
  * Date: @DATE 
  */
 /*global document, jQuery, navigator, window*/
-(function ($, undefined) {
+(function ($) {
     "use strict";
     /* TODO: 
         preserve today highlighted
