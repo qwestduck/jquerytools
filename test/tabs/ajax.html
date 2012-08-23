@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>[tabs] Ajax effect</title>
+<script src="../../lib/jquery-1.7.1.js"></script>
+<script src="../../src/tabs/tabs.js"></script>
+<link rel="stylesheet" type="text/css" href="css/tabs.css"/> 
+</head>
+<body><!-- tabs -->
+<ul class="tabs">
+  <li><a href="ajax1.htm">Tab 1</a></li>
+  <li><a href="ajax2.htm">Second tab</a></li>
+  <li><a href="ajax3.htm">An ultra long third tab</a></li>
+</ul>
+
+<!-- single pane. it is always visible -->
+<div class="panes">
+  <div style="display:block"></div>
+</div>
+
+<script>
+$(function() {
+  $("ul.tabs").tabs("div.panes div", {effect: 'ajax'});
+});
+</script>
+</body>
+</html>
