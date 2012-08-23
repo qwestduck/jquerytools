@@ -189,7 +189,9 @@
 				if (e.isDefaultPrevented()) { return; }
 				
         // if firstRender, only run effect if initialEffect is set, otherwise default
-				var effect = firstRender ? conf.initialEffect && conf.effect || 'default' : conf.effect;
+				// Ignore conf.initialEffect if conf.effect is "ajax"
+				// See https://github.com/jquerytools/jquerytools/issues/837
+				var effect = firstRender && conf.effect !== "ajax" ? conf.initialEffect && conf.effect || 'default' : conf.effect;
 
 				// call the effect
 				effects[effect].call(self, i, function() {
