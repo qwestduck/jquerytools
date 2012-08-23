@@ -193,7 +193,7 @@
                 }
 
                 // if firstRender, only run effect if initialEffect is set, otherwise default
-                if (firstRender && !conf.initialEffect) {
+                if (firstRender && !conf.initialEffect && conf.effect !== "ajax") {
                     effect = 'default';
                 } else {
                     effect = conf.effect;
