@@ -13,53 +13,49 @@
  * Since: Mar 2010
  * Date: @DATE 
  */
-(function($) { 
-	
-	$.fn.mousewheel = function( fn ){
-		return this[ fn ? "on" : "trigger" ]( "wheel", fn );
-	};
+/*global jQuery*/
+(function ($) {
+    "use strict";
+    $.fn.mousewheel = function (fn) {
+        return this[fn ? "on" : "trigger"]("wheel", fn);
+    };
 
-	// special event config
-	$.event.special.wheel = {
-		setup: function() {
-			$.event.add( this, wheelEvents, wheelHandler, {} );
-		},
-		teardown: function(){
-			$.event.remove( this, wheelEvents, wheelHandler );
-		}
-	};
+    // events to bind ( browser sniffed... )
+    var wheelEvents = !$.browser.mozilla ? "mousewheel" : // IE, opera, safari
+                "DOMMouseScroll" + ($.browser.version < "1.9" ? " mousemove" : ""); // firefox
 
-	// events to bind ( browser sniffed... )
-	var wheelEvents = !$.browser.mozilla ? "mousewheel" : // IE, opera, safari
-		"DOMMouseScroll"+( $.browser.version<"1.9" ? " mousemove" : "" ); // firefox
+    // special event config
+    $.event.special.wheel = {
+        // shared event handler
+        wheelHandler: function (event) {
+            switch (event.type) {
+                // FF2 has incorrect event positions
+            case "mousemove":
+                return $.extend(event.data, { // store the correct properties
+                    clientX: event.clientX,
+                    clientY: event.clientY,
+                    pageX: event.pageX,
+                    pageY: event.pageY
+                });
+            // firefox	
+            case "DOMMouseScroll":
+                $.extend(event, event.data); // fix event properties in FF2
+                event.delta = -event.detail / 3; // normalize delta
+                break;
+            // IE, opera, safari	
+            case "mousewheel":
+                event.delta = event.wheelDelta / 120;
+                break;
+            }
 
-	// shared event handler
-	function wheelHandler( event ) {
-		
-		switch ( event.type ) {
-			
-			// FF2 has incorrect event positions
-			case "mousemove": 
-				return $.extend( event.data, { // store the correct properties
-					clientX: event.clientX, clientY: event.clientY,
-					pageX: event.pageX, pageY: event.pageY
-				});
-				
-			// firefox	
-			case "DOMMouseScroll": 
-				$.extend( event, event.data ); // fix event properties in FF2
-				event.delta = -event.detail / 3; // normalize delta
-				break;
-				
-			// IE, opera, safari	
-			case "mousewheel":				
-				event.delta = event.wheelDelta / 120;
-				break;
-		}
-		
-		event.type = "wheel"; // hijack the event	
-		return $.event.handle.call( this, event, event.delta );
-	}
-	
-})(jQuery); 
-
+            event.type = "wheel"; // hijack the event	
+            return $.event.handle.call(this, event, event.delta);
+        },
+        setup: function () {
+            $.event.add(this, wheelEvents, this.wheelHandler, {});
+        },
+        teardown: function () {
+            $.event.remove(this, wheelEvents, this.wheelHandler);
+        }
+    };
+}(jQuery));
