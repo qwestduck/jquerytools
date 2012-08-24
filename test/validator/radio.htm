@@ -4,14 +4,28 @@
 <script src="../../src/validator/validator.js"></script>
 
 <style>
+
+.test {
+    background-color:#CCC;
+}
+
+.description {
+    background-color:#999;
+    color:yellow;
+    padding:2em;
+}
+
+.procedure:before {
+    content:"Procedure: ";
+}
+
+.expected:before {
+    content:"Expected: ";
+}
+
 label {
 	margin:10px 0;
 	display:block;
-}
-
-body {
-	padding:100px;		
-	font-family:sans-serif;
 }
 
 .invalid {
@@ -26,21 +40,88 @@ body {
 }
 </style>
 
+<!-- no validation -->
+<div class='test'>
+<div class='description'>
+<p class='testname'>no validation</p>
+<ol class='procedure'>
+    <li>Cycle through several combinations of radio buttons with submit presses</li>
+    <li>Observe OUT1</li>
+</ol>
+<ul class='expected'>
+    <li>OUT1: No change</li>
+</ul>
+</div>
 <form action="#">
+        <!-- Test at least three boxes to make sure we aren't just getting lucky by testing only the first box -->
+        <!-- It is good practice to ALWAYS set at least one radio button to checked. Testing without it here to be exhaustive. -->
+        <label><input type="radio" name="required_rule" value="male" />male</label>
+        <label><input type="radio" name="required_rule" value="female" />female</label>
+        <label><input type="radio" name="required_rule" value="other" />other</label>
 
-	<label>
-		requred text 
-		<input type="text" required="required" />
-	</label>
-	
-	<label><input type="radio" name="test" value="male" checked /> male</label>
-	<label><input type="radio" name="test" value="female" /> female</label>
-	
+        <button>Submit</button>
+</form>
+</div>
+
+<!-- Test [required] rule with no default checked box-->
+<div class='test'>
+<div class='description'>
+<p class='testname'>[required] rule with no default checkbox</p>
+<ol class='procedure'>
+    <li>Click submit</li>
+    <li>Observe OUT1</li>
+    <li>Select any one radio button</li>
+    <li>Click submit</li>
+    <li>Observe OUT2</li>
+</ol>
+<ul class='expected'>
+    <li>OUT1: A single dialog box with error</li>
+    <li>OUT2: No change</li>
+</ul>
+</div>
+<form action="#">
+        <!-- Test at least three boxes to make sure we aren't just getting lucky by testing only the first box -->
+        <!-- It is good practice to ALWAYS set at least one radio button to checked. Testing without it here to be exhaustive. -->
+        <label><input type="radio" name="required_rule" value="male" required />male</label>
+        <label><input type="radio" name="required_rule" value="female" />female</label>
+        <label><input type="radio" name="required_rule" value="other" />other</label>
+
+        <button>Submit</button>
+</form>
+</div>
+
+<!-- custom rule over multiple forms on the same page -->
+<div class='test'>
+<div class='description'>
+<p class='testname'>custom rule over multiple forms on the same page</p>
+<ol class='procedure'>
+    <li>Cycle through several combinations of radio buttons</li>
+    <li>Observe OUT1</li>
+</ol>
+<ul class='expected'>
+    <li>OUT1: An error dialog box that appears after selecting the first radio button for each form that does not have "female" selected. No dialog box for forms with female selected.</li>
+</ul>
+</div>
+
+<p>Form 1</p>
+<form action="#">
+	<label><input type="radio" name="test" value="male" checked />male</label>
+	<label><input type="radio" name="test" value="female" />female</label>
+	<label><input type="radio" name="test" value="other" />other</label>
 
 	<button>Submit</button>
-	
 </form>
 
+<p>Form 2</p>
+<form action="#">
+	<label><input type="radio" name="test" value="male" checked />male</label>
+	<label><input type="radio" name="test" value="female" />female</label>
+	<label><input type="radio" name="test" value="other" />other</label>
+
+	<button>Submit</button>
+</form>
+
+<!-- Should be able to write the validator this way
 <script>
 $.tools.validator.fn("[name=test]", "Female required (?)", function(el, val) {
 	return val == 'female';		
@@ -48,3 +129,30 @@ $.tools.validator.fn("[name=test]", "Female required (?)", function(el, val) {
 
 $("form").validator({position: 'top center'});
 </script>
+-->
+
+<!-- Have to write it this way right now -->
+<script>
+// Declare a validation rule global to all validators
+$.tools.validator.fn("[name=test]:checked", "Female required (?)", function(el, val) {
+	return val === 'female';		
+});
+
+// Bind a validator to all forms
+$("form").validator({position: 'top center', offset: [0, 500]}).each( function (key, value) {
+    // Select all interesting radio buttons
+    var els = value.getInputs().filter(":radio[name=test]")
+	
+    // Bind an onChange listener to these radio buttons
+    els.on("change", function (e) {
+        // Clear previous error messages
+        value.reset(els);
+
+        // Validate
+        value.checkValidity(els, e);
+    });
+})
+</script>
+</div>
+
+
