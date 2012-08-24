@@ -258,23 +258,22 @@
     v.fn("[required]", "Please complete this mandatory field.", function (el, v) {
         if (el.is(":checkbox")) {
             return el.is(":checked");
+        } else if (el.is(":radio")) {
+            var checked = false,
+                els = $("[name='" + el.attr("name") + "']").each(function (i, el) {
+                    if ($(el).is(":checked")) {
+                        checked = true;
+                    }
+                });
+
+            return checked;
         }
+
         return !!v;
     });
 
     v.fn("[pattern]", function (el, v) {
         return v === '' || new RegExp("^" + el.attr("pattern") + "$").test(v);
-    });
-
-    v.fn(":radio", "Please select an option.", function (el) {
-        var checked = false,
-            els = $("[name='" + el.attr("name") + "']").each(function (i, el) {
-                if ($(el).is(":checked")) {
-                    checked = true;
-                }
-            });
-
-        return (checked) ? true : false;
     });
 
     function Validator(inputs, form, conf) {
@@ -404,16 +403,8 @@
                 els = els.not(":disabled");
 
                 // filter duplicate elements by name
-                var names = {},
-                    errs,
+                var errs,
                     eff;
-                els = els.filter(function () {
-                    var name = $(this).attr("name");
-                    if (!names[name]) {
-                        names[name] = true;
-                        return $(this);
-                    }
-                });
 
                 if (!els.length) {
                     return true;
@@ -563,9 +554,11 @@
         }
 
         // Web Forms 2.0 compatibility
-        if (form[0]) {
-            form[0].checkValidity = self.checkValidity;
-        }
+        form.each(function (key, value) {
+            value.checkValidity = self.checkValidity;
+            value.getInputs = self.getInputs;
+            value.reset = self.reset;
+        });
 
         // input validation               
         if (conf.inputEvent) {
