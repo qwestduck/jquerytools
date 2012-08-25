@@ -575,12 +575,18 @@
             }
         });
 
-        // get radio groups by name
-        inputs.filter(":radio[required]").on("change.V", function (e) {
-            var els = $("[name='" + $(e.srcElement).attr("name") + "']");
-            if ((els !== null) && (els.length !== 0)) {
+        // For each required radio button group assigned to this validator
+        inputs.filter(":radio[required]").each(function (key, value) {
+            // Get all the radio buttons in the radio button group
+            var els = inputs.filter(":radio[name=" + $(value).attr("name") + "]");
+            // When any of the radio buttons in the radio button group change state
+            els.on("change.V", function (e) {
+                // Reset the error message on all the radio buttons in the radio button group
+                self.reset(els);
+
+                // Validate the group
                 self.checkValidity(els, e);
-            }
+            });
         });
 
         // reposition tooltips when window is resized
