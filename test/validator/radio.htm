@@ -1,5 +1,6 @@
-<!DOCTYPE html>        
-
+<!DOCTYPE html>
+<html>
+<head>
 <script src="../../lib/jquery-1.8.0.js"></script>
 <script src="../../src/validator/validator.js"></script>
 
@@ -29,7 +30,7 @@ label {
 }
 
 .invalid {
-	border:1px solid red;		
+	border:1px solid red;
 }
 
 .error {
@@ -39,7 +40,8 @@ label {
 	padding:5px;
 }
 </style>
-
+</head>
+<body>
 <!-- no validation -->
 <div class='test'>
 <div class='description'>
@@ -47,9 +49,12 @@ label {
 <ol class='procedure'>
     <li>Cycle through several combinations of radio buttons with submit presses</li>
     <li>Observe OUT1</li>
+    <li>Click submit</li>
+    <li>Observe OUT2</li>
 </ol>
 <ul class='expected'>
     <li>OUT1: No change</li>
+    <li>OUT2: Form reset to original state; No dialog box with error</li>
 </ul>
 </div>
 <form action="#">
@@ -71,12 +76,15 @@ label {
     <li>Click submit</li>
     <li>Observe OUT1</li>
     <li>Select any one radio button</li>
-    <li>Click submit</li>
     <li>Observe OUT2</li>
+    <li>Click submit</li>
+    <li>Observe OUT3</li>
 </ol>
 <ul class='expected'>
     <li>OUT1: A single dialog box with error</li>
-    <li>OUT2: No change</li>
+    <li>OUT2: Dialog box with error disappears; Radio button remains selected</li>
+    <li>OUT3: Form reset to original state; No dialog box with error</li>
+
 </ul>
 </div>
 <form action="#">
@@ -97,9 +105,17 @@ label {
 <ol class='procedure'>
     <li>Cycle through several combinations of radio buttons</li>
     <li>Observe OUT1</li>
+    <li>Select a radio button other than "female"</li>
+    <li>Click submit</li>
+    <li>Observe OUT2</li>
+    <li>Select "female"</li>
+    <li>Click submit</li>
+    <li>Observe OUT3</li>
 </ol>
 <ul class='expected'>
     <li>OUT1: An error dialog box that appears after selecting the first radio button for each form that does not have "female" selected. No dialog box for forms with female selected.</li>
+    <li>OUT2: Error dialog box stating that "female" must be selected; Form does not reset</li>
+    <li>OUT3: Form reset to original state; No dialog box with error</li>
 </ul>
 </div>
 
@@ -154,5 +170,5 @@ $("form").validator({position: 'top center', offset: [0, 500]}).each( function (
 })
 </script>
 </div>
-
+</body>
 
