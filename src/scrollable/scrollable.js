@@ -340,12 +340,12 @@
                 var key = evt.keyCode;
 
                 if (vertical && (key === 38 || key === 40)) {
-                    self.move(key === 38 ? -1 : 1);
+                    self.move(key === 38 ? -conf.size : conf.size);
                     return evt.preventDefault();
                 }
 
                 if (!vertical && (key === 37 || key === 39)) {
-                    self.move(key === 37 ? -1 : 1);
+                    self.move(key === 37 ? -conf.size : conf.size);
                     return evt.preventDefault();
                 }
             });
