@@ -278,7 +278,7 @@
                 setTimeout(function () {
                     if (!e.isDefaultPrevented()) {
                         prev.toggleClass(conf.disabledClass, i <= 0);
-                        next.toggleClass(conf.disabledClass, i >= self.getSize() - 1);
+                        next.toggleClass(conf.disabledClass, i >= self.getSize() - conf.size);
                     }
                 }, 1);
             });
