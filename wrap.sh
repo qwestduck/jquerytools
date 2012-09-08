@@ -3,15 +3,26 @@
 VERSION="1.2.7-wepanlen"
 
 cd build
-mkdir production
-mkdir development
-mv $VERSION/*.min.js production
-mv $VERSION/*/*.min.js production
-mv $VERSION/*.js development
-mv $VERSION/*/*.js development
-rm -R $VERSION
+if [ ! -d 'production' ]
+then
+  mkdir production
+fi
+
+if [ ! -d 'development' ]
+then
+  mkdir development
+fi
+
+cp $VERSION/*.min.js production
+cp $VERSION/*/*.min.js production
+cp $VERSION/*.js development
+cp $VERSION/*/*.js development
 
 ## Build the Developer script
+if [ -f 'jquery.tools-wepanlen.js' ]
+then
+  rm jquery.tools-wepanlen.js
+fi
 touch jquery.tools-wepanlen.js
 
 ## Insert the packaged version of jQuery
@@ -38,6 +49,10 @@ cat development/tooltip.slide.js >> jquery.tools-wepanlen.js
 cat development/validator.js >> jquery.tools-wepanlen.js
 
 ## Build the Production script
+if [ -f 'jquery.tools-wepanlen.min.js' ]
+then
+  rm jquery.tools-wepanlen.min.js
+fi
 touch jquery.tools-wepanlen.min.js
 
 ## Insert the packaged version of jQuery
