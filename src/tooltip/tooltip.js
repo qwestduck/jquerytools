@@ -351,7 +351,7 @@
         // install tooltip for each entry in jQuery object
         // that is not an existing instance
         this.each(function () {
-            if ($(this).data("tooltip") === null) {
+            if (typeof $(this).data("tooltip") === 'undefined') {
                 var api = new Tooltip($(this), conf);
                 $(this).data("tooltip", api);
             }
