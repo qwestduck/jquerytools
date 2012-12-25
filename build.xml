@@ -1,12 +1,16 @@
-<project name="jQuery.Tools" default="min">
+<project name="jQuery.Tools" default="wrap">
     <taskdef resource="net/sf/antcontrib/antcontrib.properties" />
     <taskdef name="jslint" classname="com.googlecode.jslint4java.ant.JSLintTask" classpath="lib/jslint4java-2.0.2.jar" />
 
     <property name="version" value="1.2.7-wepanlen" />
-    <property name="build" value="build/${version}" />
+    <property name="build" value="build" />
     <property name="file" value="none" />
 
-    <target name="sources">
+    <target name="clean">
+        <delete dir="${build}" />
+    </target>
+
+    <target name="sources" depends="clean">
         <!-- copy sources to build directory -->
         <mkdir dir="${build}" />
         <copy todir="${build}">
@@ -39,8 +43,8 @@
         <replaceregexp match="@VERSION" replace="${version}" byline="true" file="${file1}" />
 
         <!-- construct a relative path for each file in ./src from its absolute path in ./build -->
-        <propertyregex property="source" input="${file1}" override="yes" replace="\2">
-            <regexp pattern=".+\/\d+\.\d+\.\d+(-\w+)?\/(.*)\.js" />
+        <propertyregex property="source" input="${file1}" override="yes" replace="\1">
+            <regexp pattern=".+\/build\/(.*)\.js" />
         </propertyregex>
 
         <!-- last modified (via <git log> command) -->
@@ -72,6 +76,60 @@
             <targetfile />
         </apply>
     </target>
+
+    <target name="wrap" depends="min">
+        <concat destfile="${build}/jquery.tools-${version}.js">
+            <fileset dir="${build}" includes="jquery-*.js" excludes="jquery-*.min.js" />
+        </concat>
+        <concat destfile="${build}/jquery.tools-${version}.js" append="yes">
+            <filelist dir="${build}">
+                <file name="dateinput/dateinput.js" />
+                <file name="overlay/overlay.js" />
+                <file name="overlay/overlay.apple.js" />
+                <file name="rangeinput/rangeinput.js" />
+                <file name="scrollable/scrollable.js" />
+                <file name="scrollable/scrollable.autoscroll.js" />
+                <file name="scrollable/scrollable.navigator.js" />
+                <file name="tabs/tabs.js" />
+                <file name="tabs/tabs.slideshow.js" />
+                <file name="toolbox/toolbox.expose.js" />
+                <file name="toolbox/toolbox.flashembed.js" />
+                <file name="toolbox/toolbox.history.js" />
+                <file name="toolbox/toolbox.mousewheel.js" />
+                <file name="tooltip/tooltip.js" />
+                <file name="tooltip/tooltip.dynamic.js" />
+                <file name="tooltip/tooltip.slide.js" />
+                <file name="validator/validator.js" />
+            </filelist>
+        </concat>
+
+        <concat destfile="${build}/jquery.tools-${version}.min.js">
+            <fileset dir="${build}" includes="jquery-*.min.js" />
+        </concat>
+        <concat destfile="${build}/jquery.tools-${version}.min.js" append="yes">
+            <filelist dir="${build}">
+                <file name="dateinput/dateinput.min.js" />
+                <file name="overlay/overlay.min.js" />
+                <file name="overlay/overlay.apple.min.js" />
+                <file name="rangeinput/rangeinput.min.js" />
+                <file name="scrollable/scrollable.min.js" />
+                <file name="scrollable/scrollable.autoscroll.min.js" />
+                <file name="scrollable/scrollable.navigator.min.js" />
+                <file name="tabs/tabs.min.js" />
+                <file name="tabs/tabs.slideshow.min.js" />
+                <file name="toolbox/toolbox.expose.min.js" />
+                <file name="toolbox/toolbox.flashembed.min.js" />
+                <file name="toolbox/toolbox.history.min.js" />
+                <file name="toolbox/toolbox.mousewheel.min.js" />
+                <file name="tooltip/tooltip.min.js" />
+                <file name="tooltip/tooltip.dynamic.min.js" />
+                <file name="tooltip/tooltip.slide.min.js" />
+                <file name="validator/validator.min.js" />
+            </filelist>
+        </concat>
+    </target>
+
+    <target name="validate" depends="lint,html5" />
 
     <!--  lint (http://www.jslint.com/lint.html) -->
     <target name="lint">
