@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <title>jQuery Tools standalone demo</title>
 
@@ -35,10 +35,11 @@
     	text-align:center;		
     }
   </style>
-
+</head>
+<body>
   <!-- wrapper element -->
   <div id="calendar">
-  	<input type="date" name="mydate" value="0" />
+  	<input type="date" name="mydate" data-value="0" />
   </div>
 
   <!-- large date display -->
@@ -62,6 +63,5 @@
     // set initial value and show dateinput when page loads	
     }).data("dateinput").setValue(0).show();
   </script>
-
-</head>
+</body>
 </html>
