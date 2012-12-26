@@ -85,7 +85,7 @@
             // check for "[type=xxx]" (not supported by jQuery)
             var test = typeRe.exec(matcher);
             if (test) {
-                matcher = isType(test[1]);
+                matcher = isType(this, test[1]);
             }
 
             // add validator to the arsenal
@@ -140,9 +140,9 @@
     }
 
     // $.is("[type=xxx]") or $.filter("[type=xxx]") not working in jQuery 1.3.2 or 1.4.2
-    function isType(type) {
+    function isType(object, type) {
         function fn() {
-            return this.getAttribute("type") === type;
+            return object.getAttribute("type") === type;
         }
         fn.key = "[type=\"" + type + "\"]";
         return fn;
