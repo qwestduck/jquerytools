@@ -110,6 +110,8 @@
                     return self;
                 }
 
+                conf = $.extend(true, conf, {fixed: $.tools.support.positionFixed()});
+
                 // find the effect
                 var eff = effects[conf.effect],
                     top,
@@ -291,7 +293,7 @@
             conf = {onBeforeLoad: conf};
         }
 
-        conf = $.extend(true, {fixed: $.tools.support.positionFixed()}, $.tools.overlay.conf, conf);
+        conf = $.extend(true, {}, $.tools.overlay.conf, conf);
 
         this.each(function () {
             el = new Overlay($(this), conf);
