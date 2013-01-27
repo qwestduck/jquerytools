@@ -86,6 +86,7 @@
         </concat>
         <concat destfile="${build}/jquery.tools-${version}.js" append="yes">
             <filelist dir="${build}">
+                <file name="support/support.js" />
                 <file name="dateinput/dateinput.js" />
                 <file name="overlay/overlay.js" />
                 <file name="overlay/overlay.apple.js" />
@@ -114,6 +115,7 @@
         </concat>
         <concat destfile="${build}/jquery.tools-${version}.min.js" append="yes">
             <filelist dir="${build}">
+                <file name="support/support.min.js" />
                 <file name="dateinput/dateinput.min.js" />
                 <file name="overlay/overlay.min.js" />
                 <file name="overlay/overlay.apple.min.js" />
