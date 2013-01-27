@@ -66,7 +66,7 @@
     <!-- minify with Closure Compiler (default mode) -->
     <target name="min" depends="sources">
         <apply executable="java" parallel="false" verbose="true" dest="${build}">
-            <fileset dir="${build}" includes="*/*.js" excludes="*/*.min.js" />
+            <fileset dir="${build}" includes="jquery-migrate-*.js,*/*.js" excludes="*/*.min.js" />
             <arg value="-jar" />
             <arg path="lib/compiler.jar" />
             <arg value="--js" />
@@ -79,7 +79,10 @@
 
     <target name="wrap" depends="min">
         <concat destfile="${build}/jquery.tools-${version}.js">
-            <fileset dir="${build}" includes="jquery-*.min.js" />
+            <fileset dir="${build}" includes="jquery-*.min.js" excludes="jquery-migrate-*.js" />
+        </concat>
+        <concat destfile="${build}/jquery.tools-${version}.js" append="yes">
+            <fileset dir="${build}" includes="jquery-migrate-*.min.js" />
         </concat>
         <concat destfile="${build}/jquery.tools-${version}.js" append="yes">
             <filelist dir="${build}">
@@ -104,7 +107,10 @@
         </concat>
 
         <concat destfile="${build}/jquery.tools-${version}.min.js">
-            <fileset dir="${build}" includes="jquery-*.min.js" />
+            <fileset dir="${build}" includes="jquery-*.min.js" excludes="jquery-migrate-*.js" />
+        </concat>
+        <concat destfile="${build}/jquery.tools-${version}.min.js" append="yes">
+            <fileset dir="${build}" includes="jquery-migrate-*.min.js" />
         </concat>
         <concat destfile="${build}/jquery.tools-${version}.min.js" append="yes">
             <filelist dir="${build}">
