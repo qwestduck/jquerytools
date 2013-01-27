@@ -28,8 +28,7 @@
             closeSpeed: 'fast',
             effect: 'default',
 
-            // since 1.2. fixed positioning not supported by IE6
-            fixed: !$.browser.msie || $.browser.version > 6,
+            fixed: false,
 
             left: 'center',
             load: false, // 1.2
@@ -292,7 +291,7 @@
             conf = {onBeforeLoad: conf};
         }
 
-        conf = $.extend(true, {}, $.tools.overlay.conf, conf);
+        conf = $.extend(true, {fixed: $.tools.support.positionFixed()}, $.tools.overlay.conf, conf);
 
         this.each(function () {
             el = new Overlay($(this), conf);
