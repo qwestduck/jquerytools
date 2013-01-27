@@ -79,7 +79,7 @@
 
     <target name="wrap" depends="min">
         <concat destfile="${build}/jquery.tools-${version}.js">
-            <fileset dir="${build}" includes="jquery-*.js" excludes="jquery-*.min.js" />
+            <fileset dir="${build}" includes="jquery-*.min.js" />
         </concat>
         <concat destfile="${build}/jquery.tools-${version}.js" append="yes">
             <filelist dir="${build}">
