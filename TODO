@@ -8,3 +8,7 @@ includes lib/HTMLValidator.jar and ant-contrib.
 
 Handle the upcoming divergence of jquery. jquery-1.9.x will be needed for oldIE and 
 jquery-2.0.x will be needed for everything else.
+
+Replace browser sniffing with feature detection.
+
+Remove jquery-migrate from production code once all deprecations have been dealt with.
