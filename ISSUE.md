@@ -1,10 +1,10 @@
-\#934 API not accessable Tabs Website and Docs
+<del>[INVALID] #934 API not accessable</del>
 
 <del>[INVALID] #932 No Source Code?</del>
 
-\#931 [Dateinput] Syntax error in outerHeight() method leads to incorrect calendar positioning
+<del>[DUPLICATE #839] #931 [Dateinput] Syntax error in outerHeight() method leads to incorrect calendar positioning</del>
 
-\#929 Missing discussion on CSS under Tabs Tools Tabs Website and Docs
+<del>[INVALID] #929 Missing discussion on CSS under Tabs</del>
 
 \#928 Really broken with jQuery 1.9
 
@@ -54,7 +54,7 @@
 
 <del>[INVALID] 894 is this project dead?</del>
 
-\#890 outerHeight()/outerWidth() fix for jQuery 1.8+
+<del>[DUPLICATE #839] #890 outerHeight()/outerWidth() fix for jQuery 1.8+</del>
 
 \#889 flashembed not displaying in Firefox 16.0.1 Toolbox Lag when resizing window
 
@@ -82,7 +82,7 @@
 
 \#875 Minified, standalone jQT Validator produces error messages without text
 
-\#873 Update src/overlay/overlay.js
+<del>[DUPLICATE #839] #873 Update src/overlay/overlay.js</del>
 
 \#872 Manipulate error message element on fail
 
@@ -118,7 +118,7 @@
 
 \#853 fix xss bug on tooltip initialize
 
-\#851 Fix invalid signature of outerHeight and outerWidth functions
+<del>[DUPLICATE #839] #851 Fix invalid signature of outerHeight and outerWidth functions</del>
 
 \#850 Scrollable nested in Overlay doesn't work with jQuery 1.8.0
 
@@ -136,7 +136,7 @@
 
 \#841 Site Link broken Tooltip Confirmed Website and Docs
 
-\#839 Overlay Centering with jQuery 1.8 Overlay Confirmed
+<del>[RESOLVED] #839 Overlay Centering with jQuery 1.8 Overlay Confirmed</del>
 
 \#838 broken link Tabs Confirmed Website and Docs
 
