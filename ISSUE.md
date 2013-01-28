@@ -52,7 +52,7 @@
 
 \#895 Allow multiple tabs to be open simultaneously
 
-  <del>[INVALID] 894 is this project dead?</del>
+  <del>[DUPLICATE #858] #894 is this project dead?</del>
 
   <del>[DUPLICATE #839] #890 outerHeight()/outerWidth() fix for jQuery 1.8+</del>
 
@@ -110,7 +110,7 @@
 
 \#859 problem with nginx on your website
 
-  <del>[INVALID> #858 Is there still an active private development?</del>
+  <del>[INVALID] #858 Is there still an active private development?</del>
 
 \#857 Improvement: Enable validator for contenteditable DOM Validator
 
