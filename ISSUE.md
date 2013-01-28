@@ -302,7 +302,7 @@
 
 \#722 Overflow auto resizing backgrounds for external pages and positioning Overlay
 
-\#720 Using <form>'s "elements" and <input>'s "form" attributes which are
+\#720 Using \<form\>'s "elements" and \<input\>'s "form" attributes which are already known to the browser instead of querying the DOM.
 
 \#718 Scrollable onBeforeSeek event behaves not exactly as described Scrollable Incomplete
 
