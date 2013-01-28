@@ -16,7 +16,7 @@
 
 \#923 Overlay not closing per mask if once prevented
 
-\#921 Some Broken Links on the Site Tabs Confirmed Website and Docs
+  <del>[INVALID] #921 Some Broken Links on the Site</del>
 
   <del>[INVALID] #920 CDN issue</del>
 
@@ -28,7 +28,7 @@
 
 \#913 Can't reliably pass a zero variable to initialIndex
 
-\#910 Javascript files contain a broken website link All Tools Confirmed Website and Docs
+  <del>[INVALID] #910 Javascript files contain a broken website link</del>
 
 \#909 small fix for top calculuation
 
@@ -134,11 +134,11 @@
 
 \#842 Localization of dateinput: extended characters in days Dateinput Not Reproducible
 
-\#841 Site Link broken Tooltip Confirmed Website and Docs
+  <del>[INVALID] #841 Site Link broken</del>
 
-  <del>[RESOLVED] #839 Overlay Centering with jQuery 1.8 Overlay Confirmed</del>
+  <del>[RESOLVED] #839 Overlay Centering with jQuery 1.8</del>
 
-\#838 broken link Tabs Confirmed Website and Docs
+  <del>[INVALID] #838 broken link</del>
 
 \#837 jquery tools tab ajax BUG Tabs bug Confirmed High Priority
 
@@ -166,7 +166,7 @@
 
 \#815 Overlay: Mask disappeared when open 2nd Overlay from displaying 1st Overlay
 
-\#813 Close button not working on overlay Confirmed Website and Docs
+  <del>[INVALID] #813 Close button not working on overlay</del>
 
 \#812 web reputation issues at cdn.jquerytools.org All Tools  Question
 
@@ -178,15 +178,15 @@
 
 \#806 Scrollable next-Button toggle disabledClass Scrollable Incomplete
 
-\#803 ${demo.title} Validator Confirmed Website and Docs
+  <del>[INVALID] #803 ${demo.title}</del>
 
-\#801 Link broken Website and Docs
+  <del>[INVALID] #801 Link broken</del>
 
 \#800 Error displaying more than 10 tabs Tabs
 
 \#799 Using HTML inside tooltip creating linebreak before link Tabs Incomplete
 
-\#798 scrollable gallery with tooltips link not working on basic Users Guide page Website and Docs
+  <del>[INVALID] #798 scrollable gallery with tooltips link not working on basic Users Guide page</del>
 
 \#797 iPhone Overlay does not work Overlay
 
@@ -198,7 +198,7 @@
 
 \#790 MouseWheel does not work with scrollable vertical Toolbox bug
 
-\#789 Update Documentation: Overlay, closeOnClick Website and Docs
+  <del>[INVALID] #789 Update Documentation: Overlay, closeOnClick</del>
 
 \#788 Scope api variable correctly
 
@@ -222,7 +222,7 @@
 
 \#776 Overlay Mask Covering Overlay Content Overlay Incomplete
 
-\#775 broken link on website Confirmed Website and Docs Fix posted
+  <del>[INVALID] #775 broken link on website</del>
 
 \#773 corrected two important bugs (issue #748) in tabs+history
 
@@ -282,7 +282,7 @@
 
 \#735 Scrollable demo not working Scrollable
 
-\#734 404 @ http://jquerytools.org/toolbox/expose.html Confirmed Website and Docs
+  <del>[INVALID] #734 404 @ http://jquerytools.org/toolbox/expose.html</del>
 
 \#733 Validator - Radio buttons are always required and error message persists Validator Not Reproducible
 
@@ -310,7 +310,7 @@
 
 \#716 Tabs don't work in scrollable demo on jquerytools.org in Firefox 11 & Opera 11 Tabs bug Confirmed
 
-\#715 website: release notes typo Confirmed Website and Docs
+  <del>[INVALID] #715 website: release notes typo</del>
 
 \#714 expose mask cannot be styled with css without !important Toolbox Feature Request Medium Priority
 
@@ -472,7 +472,7 @@
 
 \#360 scrollable mixed with tooltip - out of bounds Tooltip Scrollable
 
-\#346 Sign Up Broken Website and Docs
+  <del>[INVALID] #346 Sign Up Broken</del>
 
 \#335 Navigation using Tab and Shift-Tab key displaces scrollable wizard pages
 
