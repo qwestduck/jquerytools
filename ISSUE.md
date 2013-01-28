@@ -1,6 +1,6 @@
 \#934 API not accessable Tabs Website and Docs
 
-\#932 No Source Code? All Tools Website and Docs
+<del>[INVALID] #932 No Source Code?</del>
 
 \#931 [Dateinput] Syntax error in outerHeight() method leads to incorrect calendar positioning
 
@@ -18,7 +18,7 @@
 
 \#921 Some Broken Links on the Site Tabs Confirmed Website and Docs
 
-\#920 CDN issue All Tools Confirmed Website and Docs
+<del>[INVALID] #920 CDN issue</del>
 
 \#918 overlay bug Overlay Question
 
@@ -52,7 +52,7 @@
 
 \#895 Allow multiple tabs to be open simultaneously
 
-\#894 is this project dead?
+<del>[INVALID] 894 is this project dead?</del>
 
 \#890 outerHeight()/outerWidth() fix for jQuery 1.8+
 
@@ -110,7 +110,7 @@
 
 \#859 problem with nginx on your website
 
-\#858 Is there still an active private development?
+<del>[INVALID> #858 Is there still an active private development?</del>
 
 \#857 Improvement: Enable validator for contenteditable DOM Validator
 
@@ -292,7 +292,7 @@
 
 \#729 URL Validator Problem Validator
 
-\#727 Fix for Issue #726
+<del>[DUPLICATE #726] #727 Fix for Issue #726</del>
 
 \#726 Scrollable autoscroll steps setting is ignored
 
@@ -332,11 +332,11 @@
 
 \#688 Tooltip will not show if you hover in and out fast enough with animated effect.
 
-\#685 Fix for issue #76
+<del>[DUPLICATE #76] #685 Fix for issue #76</del>
 
 \#683 [dateinput] calendar does not open when preceded by select box Dateinput Fix posted Question
 
-\#680 Fix for issue #582
+<del>[DUPLICATE #582] #680 Fix for issue #582</del>
 
 \#666 Add HoverIntent to Tabs onmouseover Tabs Feature Request Low Priority
 
