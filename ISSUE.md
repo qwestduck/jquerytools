@@ -1,10 +1,10 @@
-<del>[INVALID] #934 API not accessable</del>
+	<del>[INVALID] #934 API not accessable</del>
 
-<del>[INVALID] #932 No Source Code?</del>
+	<del>[INVALID] #932 No Source Code?</del>
 
-<del>[DUPLICATE #839] #931 [Dateinput] Syntax error in outerHeight() method leads to incorrect calendar positioning</del>
+	<del>[DUPLICATE #839] #931 [Dateinput] Syntax error in outerHeight() method leads to incorrect calendar positioning</del>
 
-<del>[INVALID] #929 Missing discussion on CSS under Tabs</del>
+	<del>[INVALID] #929 Missing discussion on CSS under Tabs</del>
 
 \#928 Really broken with jQuery 1.9
 
@@ -18,7 +18,7 @@
 
 \#921 Some Broken Links on the Site Tabs Confirmed Website and Docs
 
-<del>[INVALID] #920 CDN issue</del>
+	<del>[INVALID] #920 CDN issue</del>
 
 \#918 overlay bug Overlay Question
 
@@ -52,9 +52,9 @@
 
 \#895 Allow multiple tabs to be open simultaneously
 
-<del>[INVALID] 894 is this project dead?</del>
+	<del>[INVALID] 894 is this project dead?</del>
 
-<del>[DUPLICATE #839] #890 outerHeight()/outerWidth() fix for jQuery 1.8+</del>
+	<del>[DUPLICATE #839] #890 outerHeight()/outerWidth() fix for jQuery 1.8+</del>
 
 \#889 flashembed not displaying in Firefox 16.0.1 Toolbox Lag when resizing window
 
@@ -82,7 +82,7 @@
 
 \#875 Minified, standalone jQT Validator produces error messages without text
 
-<del>[DUPLICATE #839] #873 Update src/overlay/overlay.js</del>
+	<del>[DUPLICATE #839] #873 Update src/overlay/overlay.js</del>
 
 \#872 Manipulate error message element on fail
 
@@ -110,7 +110,7 @@
 
 \#859 problem with nginx on your website
 
-<del>[INVALID> #858 Is there still an active private development?</del>
+	<del>[INVALID> #858 Is there still an active private development?</del>
 
 \#857 Improvement: Enable validator for contenteditable DOM Validator
 
@@ -118,7 +118,7 @@
 
 \#853 fix xss bug on tooltip initialize
 
-<del>[DUPLICATE #839] #851 Fix invalid signature of outerHeight and outerWidth functions</del>
+	<del>[DUPLICATE #839] #851 Fix invalid signature of outerHeight and outerWidth functions</del>
 
 \#850 Scrollable nested in Overlay doesn't work with jQuery 1.8.0
 
@@ -136,7 +136,7 @@
 
 \#841 Site Link broken Tooltip Confirmed Website and Docs
 
-<del>[RESOLVED] #839 Overlay Centering with jQuery 1.8 Overlay Confirmed</del>
+	<del>[RESOLVED] #839 Overlay Centering with jQuery 1.8 Overlay Confirmed</del>
 
 \#838 broken link Tabs Confirmed Website and Docs
 
@@ -292,7 +292,7 @@
 
 \#729 URL Validator Problem Validator
 
-<del>[DUPLICATE #726] #727 Fix for Issue #726</del>
+	<del>[DUPLICATE #726] #727 Fix for Issue #726</del>
 
 \#726 Scrollable autoscroll steps setting is ignored
 
@@ -332,11 +332,11 @@
 
 \#688 Tooltip will not show if you hover in and out fast enough with animated effect.
 
-<del>[DUPLICATE #76] #685 Fix for issue #76</del>
+	<del>[DUPLICATE #76] #685 Fix for issue #76</del>
 
 \#683 [dateinput] calendar does not open when preceded by select box Dateinput Fix posted Question
 
-<del>[DUPLICATE #582] #680 Fix for issue #582</del>
+	<del>[DUPLICATE #582] #680 Fix for issue #582</del>
 
 \#666 Add HoverIntent to Tabs onmouseover Tabs Feature Request Low Priority
 
