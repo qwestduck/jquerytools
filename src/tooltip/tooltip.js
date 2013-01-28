@@ -75,7 +75,7 @@
         fade: [
             function (done) {
                 var conf = this.getConf();
-                if (!$.browser.msie || conf.fadeIE) {
+                if ($.support.opacity || conf.fadeIE) {
                     this.getTip().fadeTo(conf.fadeInSpeed, conf.opacity, done);
                 } else {
                     this.getTip().show();
@@ -85,7 +85,7 @@
 
             function (done) {
                 var conf = this.getConf();
-                if (!$.browser.msie || conf.fadeIE) {
+                if ($.support.opacity || conf.fadeIE) {
                     this.getTip().fadeOut(conf.fadeOutSpeed, done);
                 } else {
                     this.getTip().hide();

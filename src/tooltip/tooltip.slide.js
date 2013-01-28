@@ -30,7 +30,7 @@
         slideOffset: 10,
         slideInSpeed: 200,
         slideOutSpeed: 200,
-        slideFade: !$.browser.msie
+        slideFade: true
     });
 
     /* default effect: "slide"  */
@@ -40,7 +40,7 @@
             // variables
             var conf = this.getConf(),
                 tip = this.getTip(),
-                params = conf.slideFade ? {opacity: conf.opacity} : {},
+                params = (conf.slideFade && $.support.opacity) ? {opacity: conf.opacity} : {},
                 dir = dirs[conf.direction] || dirs.up;
 
             // direction			
@@ -58,7 +58,7 @@
             // variables
             var conf = this.getConf(),
                 offset = conf.slideOffset,
-                params = conf.slideFade ? {opacity: 0} : {},
+                params = (conf.slideFade && $.support.opacity) ? {opacity: 0} : {},
                 dir = dirs[conf.direction] || dirs.up,
 
                 // direction
