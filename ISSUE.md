@@ -1,6 +1,6 @@
   <del>[INVALID] #934 API not accessable</del>
 
-  <del>[INVALID] #932 No Source Code?</del>
+  <del>[DUPLICATE #796] #932 No Source Code?</del>
 
   <del>[DUPLICATE #839] #931 [Dateinput] Syntax error in outerHeight() method leads to incorrect calendar positioning</del>
 
@@ -190,7 +190,7 @@
 
 \#797 iPhone Overlay does not work Overlay
 
-\#796 Download page has no source download option All Tools  Question
+  <del>[INVALID] #796 Download page has no source download</del>
 
 \#793 Tabs + History jumping on IE6 and IE7 Tabs
 
@@ -204,9 +204,9 @@
 
 \#786 validator Issue Validator Incomplete
 
-\#785 Missing File On Documentation Website Confirmed Website and Docs
+  <del>[INVALID] #785 Missing File On Documentation</del>
 
-\#784 Issue 783
+  <del>[DUPLICATE #783] #784 Issue 783</del>
 
 \#783 dateinput: January not an option when earliest-available Year selected Dateinput bug Confirmed
 
