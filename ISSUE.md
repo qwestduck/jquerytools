@@ -160,7 +160,7 @@
 
 \#819 Validator message mixed up between left and center
 
-\#818 Fix for issue #710: flashembed.getVersion is broken since flash player v10.1
+  <del>[DUPLICATE #710] #818 Fix for issue #710: flashembed.getVersion is broken since flash player v10.1</del>
 
 \#817 Hlp! HOW to make OVERLAY work with tabs/ajax/fade
 
@@ -216,7 +216,7 @@
 
 \#780 Double Tap... Tooltip
 
-\#779 Persistent error messages in downloadable version, not CDN
+  <del>[INVALID] #779 Persistent error messages in downloadable version, not CDN</del>
 
 \#777 form validator does not use custom error string when using a custom input type Validator Confirmed
 
