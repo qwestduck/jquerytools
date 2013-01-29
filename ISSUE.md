@@ -8,7 +8,7 @@
 
 \#928 Really broken with jQuery 1.9
 
-\#927 specifying flash configuration parameter version Toolbox
+  <del>[DUPLICATE #710] #927 specifying flash configuration parameter version</del>
 
   <del>[INVALID] #926 Simple form progress bar</del>
 
