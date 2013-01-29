@@ -324,11 +324,14 @@
                 e = $.Event("api");
             }
 
-            // focus the input after selection (doesn't work in IE)
-			// Edited by Caleb Robinson - removed IE detection code, in IE 9 I can't see any bugs with this
             if (e.type === "click") {
+                /* This did not used to work correctly but should be fine as of jQuery 1.4.2.
+                 * If input is not visible, this may still throw an error on IE. If this becomes an issue,
+                 * a workaround may be to directly call the elements event handler with .triggerHandler("focus").
+                 * Another issue mentioned is an asynchronous fail on IE 8, so a timeout might be necessary.
+                 * This should be tested on all oldIE variants.
+                 */
                 input.focus();
-				//could use setTimeout("input.focus()",10) instead? that would fix any IE related bugs
             }
 
             // beforeChange
