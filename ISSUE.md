@@ -10,7 +10,7 @@
 
 \#927 specifying flash configuration parameter version Toolbox
 
-\#926 Simple form progress bar Question
+  <del>[INVALID] #926 Simple form progress bar</del>
 
 \#924 Hidden elements don't get scrolled properly visually
 
@@ -22,7 +22,7 @@
 
 \#918 overlay bug Overlay Question
 
-\#917 a question of overlay Overlay Question
+  <del>[INVALID] #917 a question of overlay</del>
 
 \#915 Fix #855 Modal overlay forces a horizontal scrollbar in IE 9
 
@@ -108,7 +108,7 @@
 
 \#860 tabs.slideshow: Fixed issues with first and last slide when rotate: false
 
-\#859 problem with nginx on your website
+  <del>[INVALID] #859 problem with nginx on your website</del>
 
   <del>[INVALID] #858 Is there still an active private development?</del>
 
@@ -142,7 +142,7 @@
 
 \#837 jquery tools tab ajax BUG Tabs bug Confirmed High Priority
 
-\#836 How to custom the starting position of mask layer when it overlay fadein? Overlay Question
+  <del>[INVALID] #836 How to custom the starting position of mask layer when it overlay fadein?</del>
 
 \#832 Mask problem in modal dialogs with overlay Overlay Incomplete
 
@@ -152,7 +152,7 @@
 
 \#827 Remove unused argument
 
-\#824 How to make http://jquerytools.org/ this home page automatic scroll Scrollable Question
+  <del>[INVALID] #824 How to make http://jquerytools.org/ this home page automatic scroll</del>
 
 \#822 Redirecting links
 
@@ -168,7 +168,7 @@
 
   <del>[INVALID] #813 Close button not working on overlay</del>
 
-\#812 web reputation issues at cdn.jquerytools.org All Tools  Question
+  <del>[INVALID] #812 web reputation issues at cdn.jquerytools.org</del>
 
 \#811 Validation Error Message not display properly when textarea integrated with ckeditor Validator Incomplete
 
