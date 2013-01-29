@@ -10,11 +10,46 @@
  * Date: @DATE 
  */
 
-/*global document, jQuery*/
+/*global document, jQuery, navigator*/
 (function ($) {
     "use strict";
     // static constructs
     $.tools = $.tools || {version: '@VERSION'};
+
+    var uaMatch = function (ua) {
+            ua = ua.toLowerCase();
+
+            var match = /(msie) ([\w.]+)/.exec(ua) || [];
+
+            return {
+                browser: match[1] || "",
+                version: match[2] || "0"
+            };
+        },
+        getDimensionPropertyIE = function (name) {
+            return Math.max(
+                document.documentElement["client" + name],
+                document.documentElement["scroll" + name],
+                document.body["scroll" + name]
+            );
+        },
+        matched,
+        browser = {};
+
+    matched = uaMatch(navigator.userAgent);
+
+    if (matched.browser) {
+        browser[matched.browser] = true;
+        browser.version = matched.version;
+    }
+
+    $.fn.trueWidth = function () {
+        return ((browser.msie && this.get()[0].nodeType === 9) ? getDimensionPropertyIE('Width') : this.width());
+    };
+
+    $.fn.trueHeight = function () {
+        return ((browser.msie && this.get()[0].nodeType === 9) ? getDimensionPropertyIE('Height') : this.height());
+    };
 
     $.tools.support = {
         positionFixed : function () {
