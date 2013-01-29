@@ -325,8 +325,10 @@
             }
 
             // focus the input after selection (doesn't work in IE)
-            if (e.type === "click" && !$.browser.msie) {
+			// Edited by Caleb Robinson - removed IE detection code, in IE 9 I can't see any bugs with this
+            if (e.type === "click") {
                 input.focus();
+				//could use setTimeout("input.focus()",10) instead? that would fix any IE related bugs
             }
 
             // beforeChange
