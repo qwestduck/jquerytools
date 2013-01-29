@@ -64,7 +64,7 @@
 
 \#885 Tabs with Slideshow Interval bug
 
-\#884 calendar: outerHeight(..) bug
+  <del>[DUPLICATE #839] #884 calendar: outerHeight(..) bug</del>
 
 \#883 In Firefox, join “href” to trigger events, after the mouse events, invalid
 
@@ -92,7 +92,7 @@
 
 \#869 carousel inside carousel work as only one.. the parent Incomplete
 
-\#868 Incorrect outerHeight/outerWidth use.
+  <del>[DUPLICATE #839] #868 Incorrect outerHeight/outerWidth use.</del>
 
 \#867 Overlay + Expose bug
 
@@ -100,7 +100,7 @@
 
 \#864 missing css file for tabs demo
 
-\#863 Unable to find Florida Closing Data thru florida criteria Incomplete
+  <del>[INVALID] #863 Unable to find Florida Closing Data thru florida criteria</del>
 
 \#862 Issue with vertical scrollables
 
